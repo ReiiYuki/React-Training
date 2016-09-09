@@ -1,0 +1,29 @@
+{
+  "name": "react-training",
+  "version": "1.0.0",
+  "description": "React Training",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack"
+  },
+  "scripts": {
+    "start": "webpack --watch"
+  },
+  "author": "Reii Yuki",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^2.1.0-beta.7"
+  },
+  "dependencies": {
+    "react": "^15.0.2",
+    "react-dom": "^15.0.2"
+  },
+  "peerDependencies": {
+    "react": "^15.0.2",
+    "react-dom": "^15.0.2"
+  },
+  "engines": {
+    "node": "6.0.0",
+    "npm": "3.8.6"
+  }
+}
