@@ -1,4 +1,4 @@
-// ui/theme/elements.scss
+@import 'variables';
 
 $border-style: 1px solid #cbcbcb;
 
@@ -34,5 +34,19 @@ $border-style: 1px solid #cbcbcb;
       text-align: left;
       vertical-align: bottom;
     }
+  }
+  // Button
+  .button {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    box-sizing: border-box;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    background-color: $gray2-color;
+    color: $dark-gray1-color;
+    border: none;
   }
 }
