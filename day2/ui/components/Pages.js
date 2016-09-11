@@ -1,31 +1,45 @@
+import React, { Component, PropTypes } from 'react'
+import fetch from 'isomorphic-fetch'
+import Page from './Page'
 
-// Pages.js
-import React, { Component } from 'react'
+export default class Pages extends Component {
+  static propTypes = {
+    pages: PropTypes.array.isRequired,
+    onReloadPages: PropTypes.func.isRequired
+  }
 
-class Pages extends Component {
   render() {
-    // ใส่สไตล์ไว้กับคลาส .table นำมาใช้กัน table tag
+    const { pages, onReloadPages } = this.props
+
     return (
-      <table>
+      <div>
+        {/* เรียกใช้ onReloadPages เมื่อคลิก */}
+        <button
+          className='button'
+          onClick={() => onReloadPages()}>
+          Reload Pages
+        </button>
+        <hr />
+        <table className='table'>
         <thead>
-          <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th>1</th>
-            <td>Title Page#1</td>
-            <td>
-              <a href='javascript:void(0)'>Show</a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+            <tr>
+              <th>ID</th>
+              <th>Title</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              pages.map((page) => (
+                <Page
+                  key={page.id}
+                  id={page.id}
+                  title={page.title} />
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
     )
   }
 }
-
-export default Pages
